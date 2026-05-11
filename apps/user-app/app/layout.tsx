@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google"
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
+import { Providers } from "../provider";
 
 const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
 
@@ -24,9 +25,11 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <Providers>
+        <body>
+          <ThemeProvider>{children}</ThemeProvider>
+        </body>
+      </Providers>
     </html>
   )
 }
