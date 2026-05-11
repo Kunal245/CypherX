@@ -43,4 +43,6 @@ import { Button } from "@workspace/ui/components/button";
 # Adding Next-Auth
 - apps/user-app/
 - npm i next-auth
-- Configure user-app/lib/auth.ts
+- Configure user-app/lib/auth.ts (auth logic)
+- Configure auth handler /apps/user-app/app/api/auth/[...nextauth] (same for merchant-app but different auth.ts logic)
+- Changed /packages/db/package.json "type": "module"

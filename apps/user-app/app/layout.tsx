@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google"
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
-import { Providers } from "../provider";
+import { Providers } from "../providers";
 
 const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
 
