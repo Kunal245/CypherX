@@ -1,6 +1,7 @@
 
 
 import express from "express"
+import { db } from "@workspace/db/client"
 
 const app = express();
 
@@ -10,4 +11,25 @@ app.post("/hdfcWebhook", (req, res) => {
         userId: req.body.user_identifier,
         amount: req.body.amount
     }
+    db.balance.update({
+        where: {
+            userId: userId
+        },
+        data: {
+            amount: {
+                increment: paymentInformation.amount
+            }
+        }
+    })
+    db.onRampTransaction.update({
+        where: {
+            token: paymentInformation.token
+        },
+        data: {
+            status: "Success"
+        }
+    })
+    res.status(200).json({
+        message: "captured"
+    })
 })
