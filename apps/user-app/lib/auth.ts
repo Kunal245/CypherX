@@ -5,11 +5,16 @@ import bcrypt from "bcrypt";
 export const authOptions = {
     providers: [
       CredentialsProvider({
+          //this adds the sign in with title
           name: 'Credentials',
+
+          //These are the input creds user provide
           credentials: {
             phone: { label: "Phone number", type: "text", placeholder: "1231231231" },
             password: { label: "Password", type: "password" }
           },
+
+          //Finds the existing user
           async authorize(credentials: any) {
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
@@ -17,7 +22,8 @@ export const authOptions = {
                     number: credentials.phone
                 }
             });
-
+            
+            //Validate the hashed password and i/p pass and return the details
             if (existingUser) {
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
                 if (passwordValidation) {

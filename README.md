@@ -46,3 +46,9 @@ import { Button } from "@workspace/ui/components/button";
 - Configure user-app/lib/auth.ts (auth logic)
 - Configure auth handler /apps/user-app/app/api/auth/[...nextauth] (same for merchant-app but different auth.ts logic)
 - Changed /packages/db/package.json "type": "module"
+
+# Initializing Bank Webhook
+- apps/bank-webhook
+- npm init -y
+- npx tsc --init
+- Create a dummy hdfc webhook to hit the bank server for transaction
