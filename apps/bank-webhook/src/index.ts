@@ -5,15 +5,15 @@ import { db } from "@workspace/db/client"
 
 const app = express();
 
-app.post("/hdfcWebhook", (req, res) => {
+app.post("/hdfcWebhook", async (req, res) => {
     const paymentInformation = {
         token: req.body.token,
         userId: req.body.user_identifier,
         amount: req.body.amount
     }
-    db.balance.update({
+    await db.balance.update({
         where: {
-            userId: userId
+            userId: paymentInformation.userId
         },
         data: {
             amount: {
@@ -21,7 +21,7 @@ app.post("/hdfcWebhook", (req, res) => {
             }
         }
     })
-    db.onRampTransaction.update({
+    await db.onRampTransaction.update({
         where: {
             token: paymentInformation.token
         },
