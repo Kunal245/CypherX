@@ -6,6 +6,8 @@ import { db } from "@workspace/db/client"
 const app = express();
 
 app.post("/hdfcWebhook", async (req, res) => {
+    //ps1- add zod validation (fuck it)
+    //ps2- adding transaction...
     const paymentInformation = {
         token: req.body.token,
         userId: req.body.user_identifier,

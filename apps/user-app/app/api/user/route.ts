@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export const GET = async () => {
     try{
-            const session = await getServerSession(authOptions);
+        const session = await getServerSession(authOptions);
         if (session.user) {
             return NextResponse.json({
                 user: session.user
