@@ -1,9 +1,11 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
+// @ts-expect-error 
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
 import { Providers } from "../providers";
+import { AppbarClient } from "@/components/AppbarClient";
 
 const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
 
@@ -26,6 +28,7 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
     >
       <Providers>
+        <AppbarClient></AppbarClient>
         <body>
           <ThemeProvider>{children}</ThemeProvider>
         </body>
