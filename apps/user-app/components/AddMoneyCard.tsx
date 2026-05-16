@@ -26,13 +26,20 @@ export const AddMoney = () => {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label>Amount</Label>
+          
+          {/* changes the state variable amount */}
           <Input placeholder="Enter amount" onChange={() => {}} />
         </div>
 
         <div className="space-y-2">
           <Label>Bank</Label>
           <Select
+            //this one is the default value which appears in dropdown
             defaultValue={SUPPORTED_BANKS[0]?.name}
+
+            //**********main logic of this component****:
+            //Whenever the user clicks on any bank from list
+            //the state comp changes redirect url 
             onValueChange={(value) =>
               setRedirectUrl(
                 SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || ""
