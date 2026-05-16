@@ -1,23 +1,23 @@
+"use client"
 
 
 
 
-"use client";
-import { SidebarMenuButton } from "@workspace/ui/components/sidebar";
-import { usePathname, useRouter } from "next/navigation";
+import { SidebarMenuButton } from "@workspace/ui/components/sidebar"
+import { usePathname, useRouter } from "next/navigation"
 
 export const SidebarItem = ({
   href,
   title,
   icon,
 }: {
-  href: string;
-  title: string;
-  icon: React.ReactNode;
+  href: string
+  title: string
+  icon: React.ReactNode
 }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const selected = pathname === href;
+  const router = useRouter()
+  const pathname = usePathname()
+  const selected = pathname === href
 
   return (
     <SidebarMenuButton
