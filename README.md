@@ -53,9 +53,3 @@ import { Button } from "@workspace/ui/components/button";
 - ````npx tsc --init```
 - Create a dummy hdfc webhook to hit the bank server for transaction
 
-# Seeding db with prisma
-- /packages/db/
-- ```npm install -D ts-node typescript @types/node```
-- configure package.json
-- ```npx prisma db seed```
-- data added can be checked using ```npx prisma studio```
