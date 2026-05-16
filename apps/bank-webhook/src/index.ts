@@ -7,31 +7,45 @@ const app = express();
 
 app.post("/hdfcWebhook", async (req, res) => {
     //ps1- add zod validation (fuck it)
-    //ps2- adding transaction...
     const paymentInformation = {
         token: req.body.token,
         userId: req.body.user_identifier,
         amount: req.body.amount
     }
-    await db.balance.update({
-        where: {
-            userId: paymentInformation.userId
-        },
-        data: {
-            amount: {
-                increment: paymentInformation.amount
-            }
-        }
-    })
-    await db.onRampTransaction.update({
-        where: {
-            token: paymentInformation.token
-        },
-        data: {
-            status: "Success"
-        }
-    })
-    res.status(200).json({
-        message: "captured"
-    })
+    
+    
+    
+    //ps2- adding Transactions- prevents partial code execution
+    try{
+        await db.$transaction([
+            db.balance.update({
+                where: {
+                    userId: paymentInformation.userId
+                },
+                data: {
+                    amount: {
+                        increment: paymentInformation.amount
+                    }
+                }
+            }),
+            db.onRampTransaction.update({
+                where: {
+                    token: paymentInformation.token
+                },
+                data: {
+                    status: "Success"
+                }
+            })
+        ])
+        
+        res.status(200).json({
+            message: "captured"
+        })
+    } catch(e) {
+        res.status(411).json({
+            msg: "web-hook processing error"
+        })
+    }
 })
+
+app.listen(3003)
