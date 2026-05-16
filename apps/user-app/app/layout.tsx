@@ -28,8 +28,8 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
     >
       <Providers>
-        <AppbarClient></AppbarClient>
         <body>
+          <AppbarClient></AppbarClient>
           <ThemeProvider>{children}</ThemeProvider>
         </body>
       </Providers>
