@@ -2,7 +2,8 @@
 
 
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
+
 
 export const BalanceCard = ({ amount, locked }: { amount: number; locked: number }) => {
   return (
