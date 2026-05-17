@@ -7,9 +7,20 @@ import { BalanceCard } from "../../../components/BalanceCard";
 import { OnRampTransactions } from "../../../components/OnRampTransaction";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 async function getBalance() {
   const session = await getServerSession(authOptions);
+
+
+  //********BUG******
+  //even afterr clicking logout it tries to fetch balance from db which,
+  //became undefined after logout
+  //so we need to add this logic to redirect the user to the signin page if the session is expired 
+  if(!session?.user?.id) {
+    redirect("api/auth/signin")
+  }
+  //FIXED
 
     // console.log(session);
     // console.log("debugginggg");
