@@ -10,6 +10,10 @@ import { authOptions } from "@/lib/auth";
 
 async function getBalance() {
   const session = await getServerSession(authOptions);
+
+    // console.log(session);
+    // console.log("debugginggg");
+
   const balance = await db.balance.findFirst({
     where: { userId: Number(session?.user?.id) },
   });

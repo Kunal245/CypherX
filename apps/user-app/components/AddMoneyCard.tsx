@@ -19,7 +19,7 @@ export const AddMoney = () => {
   const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
 
   return (
-    <Card>
+    <Card className="h-fit">
       <CardHeader>
         <CardTitle>Add Money</CardTitle>
       </CardHeader>
@@ -28,7 +28,7 @@ export const AddMoney = () => {
           <Label>Amount</Label>
           
           {/* changes the state variable amount */}
-          <Input placeholder="Enter amount" onChange={() => {}} />
+          <Input className="text-base" placeholder="Enter amount" onChange={() => {}} />
         </div>
 
         <div className="space-y-2">
@@ -46,10 +46,10 @@ export const AddMoney = () => {
               )
             }
           >
-            <SelectTrigger>
+            <SelectTrigger >
               <SelectValue placeholder="Select a bank" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="py-1 px-1">
               {SUPPORTED_BANKS.map((bank) => (
                 <SelectItem key={bank.name} value={bank.name}>
                   {bank.name}
