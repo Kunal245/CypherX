@@ -59,3 +59,7 @@ import { Button } from "@workspace/ui/components/button";
 - configure package.json
 - ```npx prisma db seed```
 - data added can be checked using ```npx prisma studio```
+
+# Dummy HDFC Web-hook
+- ```npm install -D tsx -w bank-webhook```
+- scripts: "dev": "tsx watch src/index.ts"
