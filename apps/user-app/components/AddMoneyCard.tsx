@@ -17,7 +17,9 @@ const SUPPORTED_BANKS = [
 ];
 
 export const AddMoney = () => {
-  const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl);
+  const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl)
+  const [amount, setAmount] = useState("")
+  const [provider, setProvider] = useState(SUPPORTED_BANKS[0]?.name)
 
   return (
     <Card className="h-fit">
@@ -44,6 +46,10 @@ export const AddMoney = () => {
             onValueChange={(value) =>
               setRedirectUrl(
                 SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || ""
+              )
+              //add provider state also
+              setProvider(
+                SUPPORTED_BANKS.find((x) => x.name === value)?.name || ""
               )
             }
           >
