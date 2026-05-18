@@ -43,15 +43,11 @@ export const AddMoney = () => {
             //**********main logic of this component****:
             //Whenever the user clicks on any bank from list
             //the state comp changes redirect url 
-            onValueChange={(value) =>
-              setRedirectUrl(
-                SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || ""
-              )
+            onValueChange={(value) => {
+              setRedirectUrl( SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || "" )
               //add provider state also
-              setProvider(
-                SUPPORTED_BANKS.find((x) => x.name === value)?.name || ""
-              )
-            }
+              setProvider( SUPPORTED_BANKS.find((x) => x.name === value)?.name || "" ) //FIXED
+            }}
           >
             <SelectTrigger >
               <SelectValue placeholder="Select a bank" />
