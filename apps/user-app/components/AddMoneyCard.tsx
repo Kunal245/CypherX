@@ -18,8 +18,8 @@ const SUPPORTED_BANKS = [
 
 export const AddMoney = () => {
   const [redirectUrl, setRedirectUrl] = useState(SUPPORTED_BANKS[0]?.redirectUrl)
-  const [amount, setAmount] = useState("")
-  const [provider, setProvider] = useState(SUPPORTED_BANKS[0]?.name)
+  const [amount, setAmount] = useState(0)
+  const [provider, setProvider] = useState(SUPPORTED_BANKS[0]?.name || "")
 
   return (
     <Card className="h-fit">
@@ -31,7 +31,9 @@ export const AddMoney = () => {
           <Label>Amount</Label>
           
           {/* changes the state variable amount */}
-          <Input className="text-base" placeholder="Enter amount" onChange={() => {}} />
+          <Input className="text-base" placeholder="Enter amount" onChange={(e) => {
+            setAmount(Number(e.target.value)) //convert to number //FIXED
+          }} />
         </div>
 
         <div className="space-y-2">
@@ -45,7 +47,7 @@ export const AddMoney = () => {
             //the state comp changes redirect url 
             onValueChange={(value) => {
               setRedirectUrl( SUPPORTED_BANKS.find((x) => x.name === value)?.redirectUrl || "" )
-              //add provider state also
+              //pass provider also
               setProvider( SUPPORTED_BANKS.find((x) => x.name === value)?.name || "" ) //FIXED
             }}
           >
@@ -64,8 +66,8 @@ export const AddMoney = () => {
 
         <Button
           className="w-full"
-          onClick={() => {
-            await createOnRampTransaction(amount, provider)
+          onClick={async () => {
+            await createOnRampTransaction(amount*100, provider)
             window.location.href = redirectUrl || "";
           }}
         >
