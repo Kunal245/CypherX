@@ -28,7 +28,7 @@ export async function createOnRampTransaction(amount: number, provider: string) 
     //if user exist store txn data
     await db.onRampTransaction.create({
         data: {
-            userId,
+            userId: Number(userId),
             amount: amount,
             status: "Processing",
             startTime: new Date(),
