@@ -2,6 +2,7 @@
 
 
 "use client";
+import { createOnRampTransaction } from "@/lib/actions/createOnRampTransaction";
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
@@ -62,6 +63,7 @@ export const AddMoney = () => {
         <Button
           className="w-full"
           onClick={() => {
+            await createOnRampTransaction(amount, provider)
             window.location.href = redirectUrl || "";
           }}
         >
