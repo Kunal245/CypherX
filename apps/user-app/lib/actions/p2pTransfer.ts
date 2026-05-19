@@ -30,8 +30,8 @@ export async function p2pTransfer(to: string, amount: number) {
         }
     }
 
-    console.log(sender)
-    console.log(recieaver.id) 
+    // console.log(sender)
+    // console.log(recieaver.id) 
     // FIXED 
     await db.$transaction(async(txn) => {
 
