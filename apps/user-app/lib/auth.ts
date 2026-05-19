@@ -40,7 +40,16 @@ export const authOptions = {
                 const user = await db.user.create({
                     data: {
                         number: credentials.phone,
-                        password: hashedPassword
+                        password: hashedPassword,
+
+                        //FIXING: no balance table while signup
+                        //FIXED
+                        Balance: {
+                            create: {
+                                amount: 100,
+                                locked: 0
+                            }
+                        }
                     }
                 });
             
