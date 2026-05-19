@@ -43,7 +43,7 @@ app.post("/hdfcWebhook", async (req, res) => {
                 }
             })
         ])
-
+        
         // console.log(balance)
         
         res.status(200).json({
@@ -58,3 +58,11 @@ app.post("/hdfcWebhook", async (req, res) => {
 })
 
 app.listen(3003)
+
+
+
+
+//BUG- BALANCE GETS UPDATED IF OLDER TOKEN PASSED BUT STATUS OF NEW REMAINS SAME OFC
+//EXPLANATION- This is the failure of bank webhook not my application they should send status update on right token
+//FIX- For safe txn the server should only approve for processing txn 
+//BUT- Then miscoordination happen the bank statement says payment approved and our server says decline
