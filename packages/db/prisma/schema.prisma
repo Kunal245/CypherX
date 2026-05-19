@@ -22,7 +22,7 @@ model User {
   OnRampTransaction     OnRampTransaction[]
   Balance               Balance[]
   sentTransfers         P2pTransactions[]     @relation(name: "SenderRelation")
-  recieavedTransfers    P2pTransactions[]     @relation(name: "RecieaverRelation")
+  receivedTransfers     P2pTransactions[]     @relation(name: "ReceiverRelation")
 }
 
 model Merchant {
@@ -50,8 +50,8 @@ model P2pTransactions {
   timestamp     DateTime
   senderId      Int
   sender        User        @relation(name: "SenderRelation", fields: [senderId], references: [id])
-  recieaverId   Int
-  recieaver     User        @relation(name: "RecieaverRelation", fields: [recieaverId], references: [id])
+  receiverId    Int
+  receiver      User        @relation(name: "ReceiverRelation", fields: [receiverId], references: [id])
 }
 
 model Balance {

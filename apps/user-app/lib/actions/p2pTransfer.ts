@@ -18,20 +18,20 @@ export async function p2pTransfer(to: string, amount: number) {
         }
     }
 
-    const recieaver = await db.user.findFirst({
+    const receiver = await db.user.findFirst({
         where: {
             number: to
         }
     })
 
-    if(!recieaver) {
+    if(!receiver) {
         return {
             msg: "User does not exist"
         }
     }
 
     // console.log(sender)
-    // console.log(recieaver.id) 
+    // console.log(receiver.id) 
     // FIXED 
 
     await db.$transaction(async(txn) => {
@@ -43,7 +43,7 @@ export async function p2pTransfer(to: string, amount: number) {
 
         const senderBalance = await txn.balance.findUnique({
             where: {
-                userId: Number(recieaver.id)
+                userId: Number(receiver.id)
             }
         })
             // console.log("before delay") //FIXED
@@ -69,12 +69,21 @@ export async function p2pTransfer(to: string, amount: number) {
 
         await txn.balance.update({
             where: {
-                userId: recieaver.id
+                userId: receiver.id
             },
             data: {
                 amount: {
                     increment: amount
                 }
+            }
+        })
+
+        await txn.p2pTransactions.create({
+            data: {
+                senderId: Number(sender),
+                receiverId: receiver.id,
+                amount: amount,
+                timestamp: new Date()
             }
         })
     })
