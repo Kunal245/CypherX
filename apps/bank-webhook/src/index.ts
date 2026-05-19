@@ -14,9 +14,9 @@ app.post("/hdfcWebhook", async (req, res) => {
         amount: req.body.amount
     }
     
-    console.log(typeof req.body.token)
-    console.log(typeof req.body.user_identifier)
-    console.log(typeof req.body.amount)
+    // console.log(typeof req.body.token)
+    // console.log(typeof req.body.user_identifier)
+    // console.log(typeof req.body.amount)
 
     
     
@@ -26,7 +26,7 @@ app.post("/hdfcWebhook", async (req, res) => {
         await db.$transaction([
             db.balance.update({
                 where: {
-                    userId: paymentInformation.userId
+                    userId: Number(paymentInformation.userId)
                 },
                 data: {
                     amount: {
