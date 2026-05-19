@@ -43,7 +43,7 @@ model OnRampTransaction {
   user        User         @relation(fields: [userId], references: [id])
 }
 
-//adding p2p table
+//added p2p table
 model P2pTransactions {
   id            Int         @id @default(autoincrement())
   amount        Int
