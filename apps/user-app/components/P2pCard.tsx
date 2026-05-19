@@ -15,25 +15,25 @@ export function P2pCard() {
     const [amount, setAmount] = useState("")
 
 
-    return <div>
-        <Card className="h-fit">
+    return <div className="flex justify-center items-center min-h-96">
+        <Card className="w-full max-w-sm">
             <CardHeader>
                 <CardTitle>Send</CardTitle>
             </CardHeader>
-            <CardContent>
-                <div>
+            <CardContent className="space-y-4">
+                <div className="space-y-2">
                     <Label>Number</Label>
                     <Input placeholder="Enter Number" onChange={(e) => {
                         setNumber(e.target.value)
                     }} ></Input>
                 </div>
-                <div>
+                <div className="space-y-2">
                     <Label>Amount</Label>
                     <Input placeholder="Enter Amount" onChange={(e) => {
                         setAmount(e.target.value)
                     }} ></Input>
                 </div>
-                <Button onClick={() => {
+                <Button className="w-full" onClick={() => {
 
                 }}>Send</Button>
             </CardContent>
