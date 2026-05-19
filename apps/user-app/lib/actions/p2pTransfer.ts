@@ -30,16 +30,18 @@ export async function p2pTransfer(to: string, amount: number) {
         }
     }
 
-    console.log(sender)
-    console.log(recieaver.id)
+    // console.log(sender)
+    // console.log(recieaver.id) FIXED 
     await db.$transaction(async(txn) => {
+
+
         const senderBalance = await txn.balance.findUnique({
             where: {
                 userId: Number(recieaver.id)
             }
         })
 
-        console.log(senderBalance)
+        // console.log(senderBalance)
 
         if (!senderBalance || senderBalance.amount < amount) {
             throw new Error("Insufficient Funds")
