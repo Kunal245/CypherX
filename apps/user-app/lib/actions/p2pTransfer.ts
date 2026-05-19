@@ -33,11 +33,13 @@ export async function p2pTransfer(to: string, amount: number) {
     // console.log(sender)
     // console.log(recieaver.id) 
     // FIXED 
+
     await db.$transaction(async(txn) => {
 
         //#1 issue: 
-        // add locking for multiple requests bypassing balance check
-         await txn.$queryRaw`SELECT * FROM "Balance" WHERE "userId"= ${Number(sender)} FOR UPDATE`
+        
+        // add locking query for multiple requests bypassing balance check
+            await txn.$queryRaw`SELECT * FROM "Balance" WHERE "userId"= ${Number(sender)} FOR UPDATE`
 
         const senderBalance = await txn.balance.findUnique({
             where: {
