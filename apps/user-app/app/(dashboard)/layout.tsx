@@ -11,6 +11,7 @@ const items = [
   { title: "Home", href: "/dashboard", icon: Home },
   { title: "Transfer", href: "/transfer", icon: ArrowLeftRight },
   { title: "Transactions", href: "/transactions", icon: Clock },
+  { title: "P2P Transaction", href: "/p2pTransaction", icon: Clock },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
