@@ -1,3 +1,6 @@
+"use client"
+
+
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
@@ -20,13 +23,19 @@ export function P2pCard() {
             <CardContent>
                 <div>
                     <Label>Number</Label>
-                    <Input></Input>
+                    <Input placeholder="Enter Number" onChange={(e) => {
+                        setNumber(e.target.value)
+                    }} ></Input>
                 </div>
                 <div>
                     <Label>Amount</Label>
-                    <Input></Input>
+                    <Input placeholder="Enter Amount" onChange={(e) => {
+                        setAmount(e.target.value)
+                    }} ></Input>
                 </div>
-                <Button>Send</Button>
+                <Button onClick={() => {
+
+                }}>Send</Button>
             </CardContent>
         </Card>
     </div>
