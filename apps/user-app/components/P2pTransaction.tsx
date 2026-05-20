@@ -5,10 +5,11 @@ import { Card, CardContent, CardHeader } from "@workspace/ui/components/card";
 
 
 type Transaction = {
-  time: Date;
-  amount: number;
-  sender: number;
-  receiver: number;
+    userId: number
+    time: Date;
+    amount: number;
+    sender: number;
+    receiver: number;
 };
 
 
@@ -21,18 +22,36 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                 {!transactions ? (<div>No Recent Transaction</div>) : (
                     <div>
                         {transactions.map((t,i) => {
-                            return <div key={i}>
-                                <div>
-                                    <div>Sent INR</div>
-                                    <div>{t.time.toDateString()}</div>
-                                    <Badge>To: {t.receiver}</Badge>
+
+                            if(t.userId == t.sender) {
+                                return <div key={i} className="flex justify-between items-center" >
+                                    <div>
+                                        <div>Sent INR</div>
+                                        <div>{t.time.toDateString()}</div>
+                                        <Badge>To: {t.receiver}</Badge>
+                                    </div>
+                                    <div>
+                                        <div className="text-red-600" >
+                                            - ₹{t.amount / 100}
+                                        </div>
+                                    </div>
                                 </div>
 
+                            } else {
 
-                                <div>
-
+                                return <div key={i}>
+                                    <div>
+                                        <div>Received INR</div>
+                                        <div>{t.time.toDateString()}</div>
+                                        <Badge>From: {t.sender}</Badge>
+                                    </div>
+                                    <div>
+                                        <div className="text-red-600" >
+                                            + ₹{t.amount / 100}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                         })}
                     </div>
                 )}
