@@ -57,7 +57,7 @@ export const OnRampTransactions = ({ transactions }: { transactions: Transaction
   );
 };
 
-
+// *******************OLDER DESIGN DRAFTS*****************************
 // import { Card } from "@repo/ui/card"
 
 // export const OnRampTransactions = ({
