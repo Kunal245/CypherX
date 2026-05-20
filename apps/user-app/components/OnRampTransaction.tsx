@@ -20,28 +20,17 @@ export const OnRampTransactions = ({ transactions }: { transactions: Transaction
       <CardContent>
 
         {/* Checks transactions lenght if zero than shows msg ow executes the mapping logic */}
-        {!transactions.length ? (
-          <div className="text-center text-muted-foreground py-8">
-            No recent transactions
-          </div>
-        ) : (
+        {/* using ternary op  */}
+        {!transactions.length ? (<div className="text-center text-muted-foreground py-8">No recent transactions</div>) : (
+          
           <div className="space-y-4">
-
-            {/* imp logic to map the transactions  */}
+            {/* imp logic to map the transactions array and show in list form  */}
             {transactions.map((t, i) => (
               <div key={i} className="flex justify-between items-center">
                 <div className="space-y-1">
                   <div className="text-sm font-medium">Received INR</div>
                   <div className="text-xs text-muted-foreground">{t.time.toDateString()}</div>
-                  <Badge
-                    variant={
-                      t.status === "Success"
-                        ? "default"
-                        : t.status === "Failure"
-                        ? "destructive"
-                        : "secondary"
-                    }
-                  >
+                  <Badge variant={t.status === "Success" ? "default" : t.status === "Failure" ? "destructive" : "secondary"}>
                     {t.status}
                   </Badge>
                 </div>
