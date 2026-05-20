@@ -6,10 +6,10 @@ import { Card, CardContent, CardHeader } from "@workspace/ui/components/card";
 
 type Transaction = {
     userId: number
-    time: Date;
-    amount: number;
-    sender: number;
-    receiver: number;
+    time: Date
+    amount: number
+    sender: number
+    receiver: number
 };
 
 
@@ -22,6 +22,9 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                 {!transactions ? (<div>No Recent Transaction</div>) : (
                     <div>
                         {transactions.map((t,i) => {
+
+                            console.log(t.sender)
+                            console.log(t.userId)
 
                             if(t.userId == t.sender) {
                                 return <div key={i} className="flex justify-between items-center" >
@@ -37,7 +40,7 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                                     </div>
                                 </div>
 
-                            } else {
+                            } else if(t.userId == t.receiver) {
 
                                 return <div key={i}>
                                     <div>
