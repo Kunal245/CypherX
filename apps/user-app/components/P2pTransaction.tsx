@@ -19,8 +19,8 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
             <CardHeader>Recent Transactions</CardHeader>
             <CardContent>
 
-                {!transactions ? (<div>No Recent Transaction</div>) : (
-                    <div>
+                {!transactions ? (<div className="text-center text-muted-foreground py-8" >No Recent Transaction</div>) : (
+                    <div className="space-y-4" >
                         {transactions.map((t,i) => {
 
                             console.log(t.sender)
@@ -28,13 +28,13 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
 
                             if(t.userId == t.sender) {
                                 return <div key={i} className="flex justify-between items-center" >
-                                    <div>
-                                        <div>Sent INR</div>
-                                        <div>{t.time.toDateString()}</div>
+                                    <div className="space-y-1" >
+                                        <div className="text-sm font-medium" >Sent INR</div>
+                                        <div className="text-xs text-muted-foreground" >{t.time.toDateString()}</div>
                                         <Badge>To: {t.receiver}</Badge>
                                     </div>
                                     <div>
-                                        <div className="text-red-600" >
+                                        <div className="text-sm font-semibold text-red-600" >
                                             - ₹{t.amount / 100}
                                         </div>
                                     </div>
@@ -42,14 +42,14 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
 
                             } else if(t.userId == t.receiver) {
 
-                                return <div key={i}>
-                                    <div>
-                                        <div>Received INR</div>
-                                        <div>{t.time.toDateString()}</div>
-                                        <Badge>From: {t.sender}</Badge>
+                                return <div key={i} className="flex justify-between items-center" >
+                                    <div className="space-y-1" >
+                                        <div className="text-sm font-medium" >Received INR</div>
+                                        <div className="text-xs text-muted-foreground" >{t.time.toDateString()}</div>
+                                        <Badge>From: {t.receiver}</Badge>
                                     </div>
                                     <div>
-                                        <div className="text-green-600" >
+                                        <div className="text-sm font-semibold text-green-600" >
                                             + ₹{t.amount / 100}
                                         </div>
                                     </div>
