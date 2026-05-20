@@ -46,7 +46,7 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                                         <Badge>From: {t.sender}</Badge>
                                     </div>
                                     <div>
-                                        <div className="text-red-600" >
+                                        <div className="text-green-600" >
                                             + ₹{t.amount / 100}
                                         </div>
                                     </div>
