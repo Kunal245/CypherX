@@ -25,8 +25,10 @@ export const OnRampTransactions = ({ transactions }: { transactions: Transaction
           
           <div className="space-y-4">
             {/* imp logic to map the transactions array and show in list form  */}
-            {transactions.map((t, i) => (
-              <div key={i} className="flex justify-between items-center">
+            {transactions.map((t, i) => {
+
+              // key is the unique id provided to map all div below
+              return <div key={i} className="flex justify-between items-center">
                 <div className="space-y-1">
                   <div className="text-sm font-medium">Received INR</div>
                   <div className="text-xs text-muted-foreground">{t.time.toDateString()}</div>
@@ -38,7 +40,7 @@ export const OnRampTransactions = ({ transactions }: { transactions: Transaction
                   + ₹{t.amount / 100}
                 </div>
               </div>
-            ))}
+            })}
           </div>
         )}
       </CardContent>

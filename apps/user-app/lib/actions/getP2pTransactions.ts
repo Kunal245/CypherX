@@ -8,7 +8,7 @@ import { db } from "@workspace/db/client";
 
 
 
-export async function getP2pTransaction() {
+export async function getP2pTransactions() {
   const session = await getServerSession(authOptions);
   const txns = await db.p2pTransactions.findMany({
     where: { senderId: Number(session?.user?.id) },
