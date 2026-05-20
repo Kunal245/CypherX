@@ -23,9 +23,9 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                         {transactions.map((t,i) => {
                             return <div key={i}>
                                 <div>
-                                    <div>Recieaved INR</div>
+                                    <div>Sent INR</div>
                                     <div>{t.time.toDateString()}</div>
-                                    <Badge>{t.receiver}</Badge>
+                                    <Badge>To: {t.receiver}</Badge>
                                 </div>
 
 

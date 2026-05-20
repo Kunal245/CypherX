@@ -8,7 +8,7 @@ import { db } from "@workspace/db/client";
 
 
 export async function getOnRampTransactions() {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions)
   const txns = await db.onRampTransaction.findMany({
     where: { userId: Number(session?.user?.id) },
   });
