@@ -23,8 +23,8 @@ export const P2pTransaction = ({transactions} : {transactions : Transaction[]}) 
                     <div className="space-y-4" >
                         {transactions.map((t,i) => {
 
-                            console.log(t.sender)
-                            console.log(t.userId)
+                            // console.log(t.sender)
+                            // console.log(t.userId)
 
                             if(t.userId == t.sender) {
                                 return <div key={i} className="flex justify-between items-center" >
