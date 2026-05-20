@@ -14,9 +14,9 @@ export async function getBalance() {
 
 
   //********BUG******
-  //even afterr clicking logout it tries to fetch balance from db which,
-  //became undefined after logout
-  //so we need to add this logic to redirect the user to the signin page if the session is expired 
+    //even afterr clicking logout it tries to fetch balance from db which,
+    //became undefined after logout
+    //so we need to add this logic to redirect the user to the signin page if the session is expired 
   if(!session?.user?.id) {
     redirect("api/auth/signin")
   }
