@@ -63,3 +63,11 @@ import { Button } from "@workspace/ui/components/button";
 # Dummy HDFC Web-hook
 - ```npm install -D tsx -w bank-webhook```
 - scripts: "dev": "tsx watch src/index.ts"
+
+# Containerizing user-app using Docker
+```bash
+docker build -t myuserapp .
+```
+```bash
+docker run -p 3000:3000 myuserapp
+```
