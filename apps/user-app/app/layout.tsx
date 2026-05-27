@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
-// @ts-expect-error 
+// @ts-ignore
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
