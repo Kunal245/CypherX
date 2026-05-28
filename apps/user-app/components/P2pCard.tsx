@@ -35,7 +35,7 @@ export function P2pCard() {
                     }} ></Input>
                 </div>
                 <Button className="w-full" onClick={async () => {
-                    await p2pTransfer(number, Number(amount))
+                    await p2pTransfer(number, Number(amount)*100)
                 }}>Send</Button>
             </CardContent>
         </Card>
