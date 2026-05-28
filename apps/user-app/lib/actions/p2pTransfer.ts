@@ -30,7 +30,7 @@ export async function p2pTransfer(to: string, amount: number) {
         }
     }
 
-    // console.log(sender)
+    console.log(sender)
     console.log(receiver.id) 
     // FIXED 
 
@@ -43,7 +43,7 @@ export async function p2pTransfer(to: string, amount: number) {
 
         const senderBalance = await txn.balance.findUnique({
             where: {
-                userId: Number(receiver.id)
+                userId: Number(sender)
             }
         })
             // console.log("before delay") //FIXED
