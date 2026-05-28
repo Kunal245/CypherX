@@ -25,7 +25,7 @@ export async function getP2pTransactions() {
       ]
     },
   });
-  return txns.map((t) => ({
+  return txns.map((t: any) => ({
     userId: userId,
     time: t.timestamp,
     amount: t.amount,
