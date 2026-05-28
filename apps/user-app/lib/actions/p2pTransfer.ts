@@ -31,7 +31,7 @@ export async function p2pTransfer(to: string, amount: number) {
     }
 
     // console.log(sender)
-    // console.log(receiver.id) 
+    console.log(receiver.id) 
     // FIXED 
 
     await db.$transaction(async(txn) => {
@@ -50,7 +50,7 @@ export async function p2pTransfer(to: string, amount: number) {
             // delay fn
             // console.log("after delay")
 
-        // console.log(senderBalance)
+        console.log(senderBalance?.amount + "err")
 
         if (!senderBalance || senderBalance.amount < amount) {
             throw new Error("Insufficient Funds")
