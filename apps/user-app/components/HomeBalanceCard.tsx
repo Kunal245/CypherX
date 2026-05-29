@@ -1,6 +1,7 @@
 
 
 
+import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Wallet } from "lucide-react";
 
@@ -17,6 +18,11 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
         <div className="flex justify-between py-2">
           <span className="text-3xl font-bold tracking-tight">
             ₹ {(locked + amount) / 100} INR
+          </span>
+        </div>
+        <div className="flex justify-between py-2">
+          <span className="text-3xl font-bold tracking-tight">
+            <Button className="bg-white"></Button>
           </span>
         </div>
       </CardContent>
