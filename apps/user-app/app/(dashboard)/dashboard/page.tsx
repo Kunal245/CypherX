@@ -1,8 +1,14 @@
+import { HomeBalanceCard } from "@/components/HomeBalanceCard";
+import { getBalance } from "@/lib/actions/getBalance"
 
 
 
-export default function Dashboard() {
+export default async function Dashboard() {
+
+    const balance = await getBalance();
+    
+
     return <div>
-        Dashboard pg
+        <HomeBalanceCard amount={balance.amount} locked={balance.locked}></HomeBalanceCard>
     </div>
 }
