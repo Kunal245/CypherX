@@ -21,10 +21,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Sidebar >
           <SidebarHeader className="px-4 py-4 text-lg font-semibold flex-row">
             <div>
-              CypherX
+              <SidebarTrigger></SidebarTrigger>
             </div>
             <div>
-              <SidebarTrigger></SidebarTrigger>
+              CypherX
             </div>
           </SidebarHeader>
           <SidebarContent>
