@@ -2,12 +2,12 @@
 
 
 import { Button } from "@workspace/ui/components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Wallet } from "lucide-react";
 
 export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: number }) => {
   return (
-    <Card className="bg-primary w-full max-w-sm">
+    <Card className="w-full max-w-full bg-primary/60">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Wallet className="h-5 w-5" />
@@ -20,12 +20,14 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
             ₹ {(locked + amount) / 100} INR
           </span>
         </div>
+      </CardContent>
+      <CardFooter>
         <div className="flex justify-between py-2">
           <span className="text-3xl font-bold tracking-tight">
-            <Button className="bg-white"></Button>
+            <Button variant="secondary" className="">Send</Button>
           </span>
         </div>
-      </CardContent>
+      </CardFooter>
     </Card>
   );
 };
