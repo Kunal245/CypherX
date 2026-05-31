@@ -3,7 +3,7 @@
 
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
-import { Wallet } from "lucide-react";
+import { EyeClosedIcon, EyeIcon, Wallet } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 // import { useRouter } from "next/navigation";
@@ -22,9 +22,11 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-2">
-        <Button onClick={() => {setHideBalance(!hideBalance)}} >click</Button>
         <div className="flex justify-between py-2">
           <span className="text-3xl font-bold tracking-tight">{hideBalance ? "🙊" : `₹ ${(locked + amount) / 100} INR`}</span>
+          <Button variant="outline" size="icon" onClick={() => {setHideBalance(!hideBalance)}} >
+            {hideBalance ? <EyeIcon></EyeIcon> : <EyeClosedIcon></EyeClosedIcon>}
+          </Button>
         </div>
       </CardContent>
       <CardFooter>
