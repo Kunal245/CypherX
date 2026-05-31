@@ -24,8 +24,10 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
       <CardFooter>
         <div className="flex justify-between py-2">
           <span className="text-3xl font-bold tracking-tight">
-            <Button variant="default" className="">Send</Button>
-            {/* <Button variant="secondary" className="bg-primary/90 border-primary">Recieave</Button> */}
+            <Button variant="outline" className="">Send</Button>
+          </span>
+          <span className="text-3xl font-bold tracking-tight">
+            <Button variant="outline" className="">Add Money</Button>
           </span>
         </div>
       </CardFooter>
