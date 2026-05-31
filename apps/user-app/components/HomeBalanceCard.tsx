@@ -28,11 +28,11 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
       </CardContent>
       <CardFooter>
         <div className="flex justify-between py-2">
-          {/* <span className="text-3xl font-bold tracking-tight">
-            <Button variant="outline" className="" onClick={() => {
-              router.push("/p2pTransaction")
-            }}>Send</Button>
-          </span> */}
+          <Link href="/p2pTransaction">
+            <span className="text-3xl font-bold tracking-tight">
+              <Button variant="outline" className="">Send</Button>
+            </span>
+          </Link>
           <Link href="/transfer">
             <span className="px-2 text-3xl font-bold tracking-tight">
               <Button variant="outline" className="">Add Money</Button>
