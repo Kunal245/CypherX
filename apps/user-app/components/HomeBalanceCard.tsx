@@ -1,14 +1,15 @@
-"use client"
+// "use client"
 
 
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Wallet } from "lucide-react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: number }) => {
 
-  const router = useRouter()
+  // const router = useRouter()
 
   return (
     <Card className="w-full max-w-full bg-primary/60 bg-gradient-to-br from-secondary/20 via-primary/20 to-secondary/20">
@@ -27,16 +28,16 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
       </CardContent>
       <CardFooter>
         <div className="flex justify-between py-2">
-          <span className="text-3xl font-bold tracking-tight">
+          {/* <span className="text-3xl font-bold tracking-tight">
             <Button variant="outline" className="" onClick={() => {
               router.push("/p2pTransaction")
             }}>Send</Button>
-          </span>
-          <span className="px-2 text-3xl font-bold tracking-tight">
-            <Button variant="outline" className="" onClick={() => {
-              router.push("/transfer")
-            }}>Add Money</Button>
-          </span>
+          </span> */}
+          <Link href="/transfer">
+            <span className="px-2 text-3xl font-bold tracking-tight">
+              <Button variant="outline" className="">Add Money</Button>
+            </span>
+          </Link>
         </div>
       </CardFooter>
     </Card>
