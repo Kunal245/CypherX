@@ -4,7 +4,7 @@
 
 
 import { SidebarItem } from "@/components/SidebarItem";
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarProvider } from "@workspace/ui/components/sidebar";
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@workspace/ui/components/sidebar";
 import { Home, ArrowLeftRight, Clock, ArrowUpRight } from "lucide-react";
 
 const items = [
@@ -19,8 +19,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
         <Sidebar >
-          <SidebarHeader className="px-4 py-4 text-lg font-semibold">
-            CypherX
+          <SidebarHeader className="px-4 py-4 text-lg font-semibold flex-row">
+            <div>
+              CypherX
+            </div>
+            <div>
+              <SidebarTrigger></SidebarTrigger>
+            </div>
           </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
@@ -36,6 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </SidebarGroup>
           </SidebarContent>
         </Sidebar>
+        <SidebarTrigger></SidebarTrigger>
         <main className="flex-1 p-6">{children}</main>
       </div>
     </SidebarProvider>
