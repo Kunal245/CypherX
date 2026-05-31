@@ -26,7 +26,7 @@ export const HomeBalanceCard = ({ amount, locked }: { amount: number; locked: nu
           <span className="text-3xl font-bold tracking-tight">
             <Button variant="outline" className="">Send</Button>
           </span>
-          <span className="text-3xl font-bold tracking-tight">
+          <span className="px-2 text-3xl font-bold tracking-tight">
             <Button variant="outline" className="">Add Money</Button>
           </span>
         </div>
