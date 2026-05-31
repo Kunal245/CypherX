@@ -2,6 +2,7 @@
 
 
 import { Button } from "@workspace/ui/components/button";
+import { SidebarProvider, SidebarTrigger } from "@workspace/ui/components/sidebar";
 
 
 interface AppbarProps {
@@ -16,6 +17,7 @@ export const Appbar = ({ user, onSignin, onSignout }: AppbarProps) => {
   return (
     <div className="flex justify-between items-center border-b px-4 h-14">
       <div>
+        
         <span className="text-lg font-semibold">CypherX</span>
         <span className="text-lg font-semibold text-primary"> pay</span>
 
