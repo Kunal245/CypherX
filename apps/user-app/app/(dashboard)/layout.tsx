@@ -5,13 +5,14 @@
 
 import { SidebarItem } from "@/components/SidebarItem";
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@workspace/ui/components/sidebar";
-import { Home, ArrowLeftRight, Clock, ArrowUpRight } from "lucide-react";
+import { Home, ArrowLeftRight, Clock, ArrowUpRight, Wallet } from "lucide-react";
 
 const items = [
   { title: "Home", href: "/dashboard", icon: Home },
   { title: "Transfer", href: "/transfer", icon: ArrowLeftRight },
   { title: "Transactions", href: "/transactions", icon: Clock },
   { title: "P2P Transaction", href: "/p2pTransaction", icon: ArrowUpRight },
+  { title: "Account Details", href: "/details", icon: Wallet },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
