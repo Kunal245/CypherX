@@ -16,9 +16,9 @@ export default async function Dashboard() {
 
     return <div className="flex-row py-2">
         <HomeBalanceCard amount={balance.amount} locked={balance.locked}></HomeBalanceCard>
-        <div className="py-6 flex-col">
-            <span><OnRampTransactions transactions={transactions} ></OnRampTransactions></span>
-            <span><P2pTransaction transactions={transactionsP2p} ></P2pTransaction></span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6">
+            <div><OnRampTransactions transactions={transactions} ></OnRampTransactions></div>
+            <div><P2pTransaction transactions={transactionsP2p} ></P2pTransaction></div>
         </div>
     </div>
 }
