@@ -4,6 +4,6 @@
 
 export default async function details(){
     return <div>
-        Account Page
+        Account Page soon...
     </div>
 }
