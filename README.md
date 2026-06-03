@@ -74,6 +74,6 @@ docker run -p 3000:3000 myuserapp
 
 # Adding NextAuth Custom Login Page
 
-## Docs
+## Referances
 
 [NextAuth Credentials Example](https://github.com/AhmedAlqurafi/next-auth-credentials)
