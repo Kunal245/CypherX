@@ -30,7 +30,7 @@ export default function RootLayout({
     >
       <Providers>
         <body>
-          <AppbarClient></AppbarClient>
+          {/* <AppbarClient></AppbarClient> */}
           <ThemeProvider>{children}</ThemeProvider>
         </body>
       </Providers>
