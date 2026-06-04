@@ -24,7 +24,7 @@ export default async function Page() {
   //ps- this ensures the user is redirected to dashboard or signin in based on the status of logged in
   const session = await getServerSession(authOptions);
   if (session?.user) {
-    redirect('/dashboard')
+    redirect('/user/dashboard')
   } else {
     redirect('/api/auth/signin')
   }
