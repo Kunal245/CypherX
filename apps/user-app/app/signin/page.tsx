@@ -16,24 +16,26 @@ export default function Signin() {
     const [password, setPassword] = useState("");
     const router = useRouter();
 
-
+    //*****************THIS IS THE FUNC WHICH PASSES THE VALUES TO NEXT CredentialProvider**********************/
     const handleSignIn = async (e: React.SyntheticEvent) => {
       e.preventDefault();
 
       // console.log('Email: ', email);
-      await signIn('credentials', {
+      const response = await signIn('credentials', {
         redirect: false,
         number,
         password,
       })
-        .then((response) => {
-          console.log(response);
-          router.replace('/dashboard');
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      router.replace('/dashboard');
+        // .then(() => {
+        //   // console.log(response);
+        //   router.replace('/dashboard');
+        // })
+        // .catch((error) => {
+        //   console.log(error);
+        // });
     };
+    //**********************************************************************************************************/
 
     return <div>
         signin
