@@ -1,6 +1,7 @@
 "use client"
 
 
+import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -9,25 +10,30 @@ import { useState } from "react"
 
 
 
-export default async function Signin() {
+export default function Signin() {
 
     const [number, setNumber] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
 
 
-    await signIn('credentials', {
-      redirect: false,
-      number,
-      password,
-    })
-      .then((response:any) => {
-        console.log(response);
-        router.replace('/dashboard');
+    const handleSignIn = async (e: React.SyntheticEvent) => {
+      e.preventDefault();
+
+      // console.log('Email: ', email);
+      await signIn('credentials', {
+        redirect: false,
+        number,
+        password,
       })
-      .catch((error:any) => {
-        console.log(error);
-      });
+        .then((response) => {
+          console.log(response);
+          router.replace('/profile');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
     return <div>
         signin
@@ -38,5 +44,8 @@ export default async function Signin() {
         <Input placeholder="password" onChange={(e) => {
             setPassword(e.target.value)
         }} ></Input>
+        <Button onClick={handleSignIn}>
+          Sign In
+        </Button>
     </div>
 }
