@@ -1,20 +1,22 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+// import { Geist, Geist_Mono, Inter } from "next/font/google"
 
-// @ts-ignore
-import "@workspace/ui/globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@workspace/ui/lib/utils";
-import { Providers } from "../../providers";
-import { AppbarClient } from "@/components/AppbarClient";
+import { AppbarClient } from "@/components/AppbarClient"
 
-const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
+// // @ts-ignore
+// import "@workspace/ui/globals.css"
+// import { ThemeProvider } from "@/components/theme-provider"
+// import { cn } from "@workspace/ui/lib/utils";
+// import { Providers } from "../../providers";
+// import { AppbarClient } from "@/components/AppbarClient";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+// const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+// const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+
+// const fontMono = Geist_Mono({
+//   subsets: ["latin"],
+//   variable: "--font-mono",
+// })
 
 export default function RootLayout({
   children,
@@ -22,17 +24,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
-    >
-      <Providers>
-        <body>
-          <AppbarClient></AppbarClient>
-          <ThemeProvider>{children}</ThemeProvider>
-        </body>
-      </Providers>
-    </html>
+    // <html
+    //   lang="en"
+    //   suppressHydrationWarning
+    //   className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
+    // >
+    //   <Providers>
+    //     <body>
+    //       <AppbarClient></AppbarClient>
+    //       <ThemeProvider>
+            <div>
+              <AppbarClient></AppbarClient>
+              {children}
+            </div>
+    //       </ThemeProvider>
+    //     </body>
+    //   </Providers>
+    // </html>
   )
 }
