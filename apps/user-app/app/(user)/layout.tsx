@@ -24,22 +24,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    // <html
-    //   lang="en"
-    //   suppressHydrationWarning
-    //   className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
-    // >
-    //   <Providers>
-    //     <body>
-    //       <AppbarClient></AppbarClient>
-    //       <ThemeProvider>
-            <div>
-              <AppbarClient></AppbarClient>
-              {children}
-            </div>
-    //       </ThemeProvider>
-    //     </body>
-    //   </Providers>
-    // </html>
+    <div>
+      <AppbarClient></AppbarClient>
+      {children}
+    </div>
   )
 }
