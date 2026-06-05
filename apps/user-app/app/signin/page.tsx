@@ -43,7 +43,10 @@ export default function Signin() {
 
         <Card className="w-full max-w-sm">
             <CardHeader>
-                <CardTitle>Welcome to CypherX</CardTitle>
+                <CardTitle className="flex">
+                  <div>Welcome to CypherX</div>
+                  <div className="text-primary px-1">pay</div>
+                </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4" >
                 <div className="space-y-2" >
@@ -54,7 +57,7 @@ export default function Signin() {
                 </div>
                 <div className="space-y-2" >
                     <Label>Password</Label>
-                    <Input placeholder="Enter Password" onChange={(e) => {
+                    <Input type="password" placeholder="Enter Password" onChange={(e) => {
                         setPassword(e.target.value)
                     }} ></Input>
                 </div>
