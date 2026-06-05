@@ -39,7 +39,7 @@ export default function Signin() {
     };
     //**********************************************************************************************************/
 
-    return <div>
+    return <div className="flex justify-center items-center min-h-96">
 
         <Card className="w-full max-w-sm">
             <CardHeader>
@@ -62,7 +62,7 @@ export default function Signin() {
             </CardContent>
         </Card>
 
-        <Input placeholder="number" onChange={(e) => {
+        {/* <Input placeholder="number" onChange={(e) => {
             setNumber(e.target.value)
         }} ></Input>
         <Input placeholder="password" onChange={(e) => {
@@ -70,6 +70,6 @@ export default function Signin() {
         }} ></Input>
         <Button onClick={handleSignIn}>
           Sign In
-        </Button>
+        </Button> */}
     </div>
 }
