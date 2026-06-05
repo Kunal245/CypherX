@@ -76,8 +76,10 @@ export const authOptions = {
             return session
         }
     },
+    //*********Disable this and next-auth signin will apprear */
     pages: {
         signIn: "/signin",
     },
+    //****************************************************** */
   }
  
