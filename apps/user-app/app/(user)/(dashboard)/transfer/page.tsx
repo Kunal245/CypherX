@@ -2,9 +2,9 @@
 
 
 import { getBalance } from "@/lib/actions/getBalance";
-import { AddMoney } from "../../../components/AddMoneyCard";
-import { BalanceCard } from "../../../components/BalanceCard";
-import { OnRampTransactions } from "../../../components/OnRampTransaction";
+import { AddMoney } from "../../../../components/AddMoneyCard";
+import { BalanceCard } from "../../../../components/BalanceCard";
+import { OnRampTransactions } from "../../../../components/OnRampTransaction";
 import { getOnRampTransactions } from "@/lib/actions/getOnRampTransactions";
 
 

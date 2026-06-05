@@ -24,6 +24,7 @@ export const authOptions = {
             });
             
             //Validate the hashed password and i/p pass and return the details
+            //logs-in-if-user-exist
             if (existingUser) {
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
                 if (passwordValidation) {
@@ -36,6 +37,7 @@ export const authOptions = {
                 return null;
             }
 
+            //creates-new-user
             try {
                 const user = await db.user.create({
                     data: {
@@ -73,6 +75,9 @@ export const authOptions = {
 
             return session
         }
-    }
+    },
+    pages: {
+        signIn: "/signin",
+    },
   }
  

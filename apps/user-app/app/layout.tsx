@@ -4,8 +4,9 @@ import { Geist, Geist_Mono, Inter } from "next/font/google"
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
-import { Providers } from "../providers";
+// import { Providers } from "../../providers";
 import { AppbarClient } from "@/components/AppbarClient";
+import { Providers } from "@/providers";
 
 const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
 
@@ -29,7 +30,7 @@ export default function RootLayout({
     >
       <Providers>
         <body>
-          <AppbarClient></AppbarClient>
+          {/* <AppbarClient></AppbarClient> */}
           <ThemeProvider>{children}</ThemeProvider>
         </body>
       </Providers>

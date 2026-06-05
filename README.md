@@ -71,3 +71,9 @@ docker build -t myuserapp .
 ```bash
 docker run -p 3000:3000 myuserapp
 ```
+
+# Adding NextAuth Custom Login Page
+
+## Referances
+
+[NextAuth Credentials Example](https://github.com/AhmedAlqurafi/next-auth-credentials)
