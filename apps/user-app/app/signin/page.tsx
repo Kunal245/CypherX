@@ -2,7 +2,9 @@
 
 
 import { Button } from "@workspace/ui/components/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
+import { Label } from "@workspace/ui/components/label";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react"
@@ -38,7 +40,27 @@ export default function Signin() {
     //**********************************************************************************************************/
 
     return <div>
-        signin
+
+        <Card className="w-full max-w-sm">
+            <CardHeader>
+                <CardTitle>Welcome to CypherX</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4" >
+                <div className="space-y-2" >
+                    <Label>Number</Label>
+                    <Input placeholder="Enter Number" onChange={(e) => {
+                        setNumber(e.target.value)
+                    }} ></Input>
+                </div>
+                <div className="space-y-2" >
+                    <Label>Password</Label>
+                    <Input placeholder="Enter Password" onChange={(e) => {
+                        setPassword(e.target.value)
+                    }} ></Input>
+                </div>
+                <Button className="w-full" onClick={handleSignIn}>Sign In</Button>
+            </CardContent>
+        </Card>
 
         <Input placeholder="number" onChange={(e) => {
             setNumber(e.target.value)
