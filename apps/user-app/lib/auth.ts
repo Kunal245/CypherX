@@ -77,6 +77,7 @@ export const authOptions = {
         }
     },
     //*********Disable this and next-auth signin will apprear */
+    // feature/custom-login-page init
     pages: {
         signIn: "/signin",
     },
