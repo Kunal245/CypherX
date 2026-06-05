@@ -62,14 +62,20 @@ export default function Signin() {
             </CardContent>
         </Card>
 
-        {/* <Input placeholder="number" onChange={(e) => {
-            setNumber(e.target.value)
-        }} ></Input>
-        <Input placeholder="password" onChange={(e) => {
-            setPassword(e.target.value)
-        }} ></Input>
-        <Button onClick={handleSignIn}>
-          Sign In
-        </Button> */}
     </div>
 }
+
+
+
+
+//*************************OLDER DRAFT**************************/
+
+{/* <Input placeholder="number" onChange={(e) => {
+    setNumber(e.target.value)
+}} ></Input>
+<Input placeholder="password" onChange={(e) => {
+    setPassword(e.target.value)
+}} ></Input>
+<Button onClick={handleSignIn}>
+  Sign In
+</Button> */}
