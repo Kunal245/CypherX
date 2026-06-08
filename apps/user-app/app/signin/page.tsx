@@ -3,7 +3,7 @@
 
 import signInCheck from "@/lib/actions/signInCheck";
 import { Button } from "@workspace/ui/components/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
+import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
 import { Label } from "@workspace/ui/components/label";
 import { signIn } from "next-auth/react";
@@ -59,6 +59,11 @@ export default function Signin() {
                   <div>Welcome to CypherX</div>
                   <div className="text-primary px-1">pay</div>
                 </CardTitle>
+                <CardAction>
+                    <Button className="text-white/60" variant="link" onClick={(e) => {
+                        router.push("/signup")
+                    }} >Sign Up</Button>
+                </CardAction>
             </CardHeader>
             <CardContent className="space-y-4" >
                 <div className="space-y-2" >
