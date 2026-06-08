@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
-        <Sidebar collapsible="icon" variant="floating" >
+        <Sidebar collapsible="icon">
           <SidebarHeader className=" text-lg font-semibold flex-row">
             <div className="py-1">
               <SidebarTrigger></SidebarTrigger>

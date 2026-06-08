@@ -259,6 +259,7 @@ function SidebarTrigger({
   const [click, setClick] = React.useState(false)
 
   if(click){
+    //collapsed
     return (
       <Button
         data-sidebar="trigger"
@@ -269,29 +270,7 @@ function SidebarTrigger({
         onClick={(event) => {
           onClick?.(event)
           toggleSidebar()
-          setClick(prevState => !prevState)
-        }}
-        {...props}
-      >
-        {/* <MenuIcon></MenuIcon> */}
-        {/* <ArrowRightIcon></ArrowRightIcon> */}
-        <SkipBackIcon></SkipBackIcon>
-        {/* <SkipForwardIcon></SkipForwardIcon> */}
-        <span className="sr-only">Toggle Sidebar</span>
-      </Button>
-    )
-  } else {
-    return (
-      <Button
-        data-sidebar="trigger"
-        data-slot="sidebar-trigger"
-        variant="ghost"
-        size="icon-sm"
-        className={cn(className)}
-        onClick={(event) => {
-          onClick?.(event)
-          toggleSidebar()
-          setClick(prevState => !prevState)
+          setClick(false)
         }}
         {...props}
       >
@@ -299,6 +278,29 @@ function SidebarTrigger({
         {/* <ArrowRightIcon></ArrowRightIcon> */}
         {/* <SkipBackIcon></SkipBackIcon> */}
         <SkipForwardIcon></SkipForwardIcon>
+        <span className="sr-only">Toggle Sidebar</span>
+      </Button>
+    )
+  } else {
+    //expanded
+    return (
+      <Button
+        data-sidebar="trigger"
+        data-slot="sidebar-trigger"
+        variant="ghost"
+        size="icon-sm"
+        className={cn(className)}
+        onClick={(event) => {
+          onClick?.(event)
+          toggleSidebar()
+          setClick(true)
+        }}
+        {...props}
+      >
+        {/* <MenuIcon></MenuIcon> */}
+        {/* <ArrowRightIcon></ArrowRightIcon> */}
+        <SkipBackIcon></SkipBackIcon>
+        {/* <SkipForwardIcon></SkipForwardIcon> */}
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     )  
