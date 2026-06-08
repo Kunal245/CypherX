@@ -255,56 +255,84 @@ function SidebarTrigger({
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar()
+  const { toggleSidebar, state } = useSidebar()
   const [click, setClick] = React.useState(false)
 
-  if(click){
-    //collapsed
-    return (
-      <Button
-        data-sidebar="trigger"
-        data-slot="sidebar-trigger"
-        variant="ghost"
-        size="icon-sm"
-        className={cn(className)}
-        onClick={(event) => {
-          onClick?.(event)
-          toggleSidebar()
-          setClick(false)
-        }}
-        {...props}
-      >
-        {/* <MenuIcon></MenuIcon> */}
-        {/* <ArrowRightIcon></ArrowRightIcon> */}
-        {/* <SkipBackIcon></SkipBackIcon> */}
+  return (
+    <Button
+      data-sidebar="trigger"
+      data-slot="sidebar-trigger"
+      variant="ghost"
+      size="icon-sm"
+      className={cn(className)}
+      onClick={(event) => {
+        onClick?.(event)
+        toggleSidebar()
+        setClick(false)
+      }}
+      {...props}
+    >
+      {/* <MenuIcon></MenuIcon> */}
+      {/* <ArrowRightIcon></ArrowRightIcon> */}
+      {/* <SkipBackIcon></SkipBackIcon> */}
+
+      {state === "collapsed" ? (
         <SkipForwardIcon></SkipForwardIcon>
-        <span className="sr-only">Toggle Sidebar</span>
-      </Button>
-    )
-  } else {
-    //expanded
-    return (
-      <Button
-        data-sidebar="trigger"
-        data-slot="sidebar-trigger"
-        variant="ghost"
-        size="icon-sm"
-        className={cn(className)}
-        onClick={(event) => {
-          onClick?.(event)
-          toggleSidebar()
-          setClick(true)
-        }}
-        {...props}
-      >
-        {/* <MenuIcon></MenuIcon> */}
-        {/* <ArrowRightIcon></ArrowRightIcon> */}
+      ) : (
         <SkipBackIcon></SkipBackIcon>
-        {/* <SkipForwardIcon></SkipForwardIcon> */}
-        <span className="sr-only">Toggle Sidebar</span>
-      </Button>
-    )  
-  }
+      )}
+      {/* <SkipForwardIcon></SkipForwardIcon> */}
+      <span className="sr-only">Toggle Sidebar</span>
+    </Button>
+  )
+
+  // if(click){
+  //   //collapsed
+  //   return (
+  //     <Button
+  //       data-sidebar="trigger"
+  //       data-slot="sidebar-trigger"
+  //       variant="ghost"
+  //       size="icon-sm"
+  //       className={cn(className)}
+  //       onClick={(event) => {
+  //         onClick?.(event)
+  //         toggleSidebar()
+  //         setClick(false)
+  //       }}
+  //       {...props}
+  //     >
+  //       {/* <MenuIcon></MenuIcon> */}
+  //       {/* <ArrowRightIcon></ArrowRightIcon> */}
+  //       {/* <SkipBackIcon></SkipBackIcon> */}
+  //       <SkipForwardIcon></SkipForwardIcon>
+  //       <span className="sr-only">Toggle Sidebar</span>
+  //     </Button>
+  //   )
+  // } else {
+  //   //expanded
+  //   return (
+  //     <Button
+  //       data-sidebar="trigger"
+  //       data-slot="sidebar-trigger"
+  //       variant="ghost"
+  //       size="icon-sm"
+  //       className={cn(className)}
+  //       onClick={(event) => {
+  //         onClick?.(event)
+  //         toggleSidebar()
+  //         setClick(true)
+  //       }}
+  //       {...props}
+  //     >
+  //       {/* <MenuIcon></MenuIcon> */}
+  //       {/* <ArrowRightIcon></ArrowRightIcon> */}
+  //       <SkipBackIcon></SkipBackIcon>
+  //       {/* <SkipForwardIcon></SkipForwardIcon> */}
+  //       <span className="sr-only">Toggle Sidebar</span>
+  //     </Button>
+  //   )  
+  // }
   
 }
 
