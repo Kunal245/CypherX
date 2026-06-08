@@ -59,7 +59,7 @@ export default function Signup() {
     };
     //**********************************************************************************************************/
 
-    return <div className="flex justify-center items-center min-h-96">
+    return <div className="flex justify-center items-center min-h-screen">
 
         <Card className="w-full max-w-sm">
             <CardHeader>
