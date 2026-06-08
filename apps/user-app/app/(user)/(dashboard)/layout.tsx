@@ -46,7 +46,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <main className="flex-1 p-6">
           {/* <SidebarTrigger></SidebarTrigger> */}
           <AppbarClient></AppbarClient>
-          {children}
+          <div className="py-4" >
+            {children}
+          </div>
         </main>
       </div>
     </SidebarProvider>
