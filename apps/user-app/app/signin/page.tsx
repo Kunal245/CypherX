@@ -28,18 +28,19 @@ export default function Signin() {
         if(!check){
             alert("No user found please SignUp")
             router.push("/signup")
+        } else {
+            e.preventDefault();
+            
+            // console.log("NUMBERRRR: " + number);
+        //   console.log('NUMBER: ', number);
+          const response = await signIn('credentials', {
+            redirect: false,
+            number,
+            password,
+          })
+          router.replace('/dashboard');
         }
 
-        e.preventDefault();
-        
-        // console.log("NUMBERRRR: " + number);
-    //   console.log('NUMBER: ', number);
-      const response = await signIn('credentials', {
-        redirect: false,
-        number,
-        password,
-      })
-      router.replace('/dashboard');
         // .then(() => {
         //   // console.log(response);
         //   router.replace('/dashboard');
