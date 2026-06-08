@@ -17,12 +17,14 @@ export default function Signin() {
     const [number, setNumber] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
+    console.log("NUMBERRRR: " + number);
 
     //*****************THIS IS THE FUNC WHICH PASSES THE VALUES TO NEXT CredentialProvider**********************/
     const handleSignIn = async (e: React.SyntheticEvent) => {
-      e.preventDefault();
-
-      // console.log('Email: ', email);
+        e.preventDefault();
+        
+        // console.log("NUMBERRRR: " + number);
+      console.log('NUMBER: ', number);
       const response = await signIn('credentials', {
         redirect: false,
         number,
@@ -61,7 +63,10 @@ export default function Signin() {
                         setPassword(e.target.value)
                     }} ></Input>
                 </div>
-                <Button className="w-full" onClick={handleSignIn}>Sign In</Button>
+                <Button className="w-full" onClick={(e) => {
+                    console.log(number)
+                    handleSignIn(e)
+                }}>Sign In</Button>
             </CardContent>
         </Card>
 

@@ -77,5 +77,3 @@ docker run -p 3000:3000 myuserapp
 ## Referances
 
 [NextAuth Credentials Example](https://github.com/AhmedAlqurafi/next-auth-credentials)
-
-## push
