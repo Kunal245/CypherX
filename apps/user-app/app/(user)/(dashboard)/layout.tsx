@@ -16,16 +16,17 @@ const items = [
   { title: "Account Details", href: "/details", icon: Wallet },
 ];
 
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
         <Sidebar collapsible="icon" >
-          <SidebarHeader className="px-4 py-4 text-lg font-semibold flex-row">
+          <SidebarHeader className=" text-lg font-semibold flex-row">
             <div className="py-1">
               <SidebarTrigger></SidebarTrigger>
-            </div>
-            <div className="py-1.5">
+            {/* </div>
+            <div className="py-1.5"> */}
             </div>
           </SidebarHeader>
           <SidebarContent>
