@@ -275,8 +275,8 @@ function SidebarTrigger({
       >
         {/* <MenuIcon></MenuIcon> */}
         {/* <ArrowRightIcon></ArrowRightIcon> */}
-        {/* <SkipBackIcon></SkipBackIcon> */}
-        <SkipForwardIcon></SkipForwardIcon>
+        <SkipBackIcon></SkipBackIcon>
+        {/* <SkipForwardIcon></SkipForwardIcon> */}
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     )
@@ -297,8 +297,8 @@ function SidebarTrigger({
       >
         {/* <MenuIcon></MenuIcon> */}
         {/* <ArrowRightIcon></ArrowRightIcon> */}
-        <SkipBackIcon></SkipBackIcon>
-        {/* <SkipForwardIcon></SkipForwardIcon> */}
+        {/* <SkipBackIcon></SkipBackIcon> */}
+        <SkipForwardIcon></SkipForwardIcon>
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     )  
