@@ -21,6 +21,7 @@ export default function Signup() {
 
     const [number, setNumber] = useState("");
     const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
     // console.log("NUMBERRRR: " + number);
@@ -41,6 +42,7 @@ export default function Signup() {
           const response = await signIn('credentials', {
             redirect: false,
             name,
+            email,
             number,
             password,
           })
@@ -71,6 +73,12 @@ export default function Signup() {
                     <Label>Name</Label>
                     <Input placeholder="Enter Full Name" onChange={(e) => {
                         setName(e.target.value)
+                    }} ></Input>
+                </div>
+                <div className="space-y-2" >
+                    <Label>Email</Label>
+                    <Input placeholder="Enter Email" onChange={(e) => {
+                        setEmail(e.target.value)
                     }} ></Input>
                 </div>
                 <div className="space-y-2" >
