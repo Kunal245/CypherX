@@ -10,7 +10,7 @@ export const authOptions = {
 
           //These are the input creds user provide
           credentials: {
-            phone: { label: "Phone number", type: "text", placeholder: "1231231231" },
+            number: { label: "Phone number", type: "text", placeholder: "1231231231" },
             password: { label: "Password", type: "password" }
           },
 
@@ -19,7 +19,8 @@ export const authOptions = {
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
                 where: {
-                    number: credentials.phone
+                    //FIX: credentials.phone was wrong since the user was sending "credentials.number"
+                    number: credentials.number
                 }
             });
             
@@ -41,7 +42,7 @@ export const authOptions = {
             try {
                 const user = await db.user.create({
                     data: {
-                        number: credentials.phone,
+                        number: credentials.number,
                         password: hashedPassword,
 
                         //FIXING: no balance table while signup
