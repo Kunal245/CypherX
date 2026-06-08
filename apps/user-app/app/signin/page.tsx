@@ -60,7 +60,7 @@ export default function Signin() {
                   <div className="text-primary px-1">pay</div>
                 </CardTitle>
                 <CardAction>
-                    <Button className="text-white/60" variant="link" onClick={(e) => {
+                    <Button className="text-primary/100" variant="link" onClick={(e) => {
                         router.push("/signup")
                     }} >Sign Up</Button>
                 </CardAction>
