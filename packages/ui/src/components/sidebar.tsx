@@ -22,7 +22,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@workspace/ui/components/tooltip"
-import { ArrowRightIcon, MenuIcon, PanelLeftIcon, SkipBackIcon } from "lucide-react"
+import { ArrowRightIcon, MenuIcon, PanelLeftIcon, SkipBackIcon, SkipForwardIcon } from "lucide-react"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -256,26 +256,54 @@ function SidebarTrigger({
   ...props
 }: React.ComponentProps<typeof Button>) {
   const { toggleSidebar } = useSidebar()
+  const [click, setClick] = React.useState(false)
 
-  return (
-    <Button
-      data-sidebar="trigger"
-      data-slot="sidebar-trigger"
-      variant="ghost"
-      size="icon-sm"
-      className={cn(className)}
-      onClick={(event) => {
-        onClick?.(event)
-        toggleSidebar()
-      }}
-      {...props}
-    >
-      {/* <MenuIcon></MenuIcon> */}
-      {/* <ArrowRightIcon></ArrowRightIcon> */}
-      <SkipBackIcon></SkipBackIcon>
-      <span className="sr-only">Toggle Sidebar</span>
-    </Button>
-  )
+  if(click){
+    return (
+      <Button
+        data-sidebar="trigger"
+        data-slot="sidebar-trigger"
+        variant="ghost"
+        size="icon-sm"
+        className={cn(className)}
+        onClick={(event) => {
+          onClick?.(event)
+          toggleSidebar()
+          setClick(prevState => !prevState)
+        }}
+        {...props}
+      >
+        {/* <MenuIcon></MenuIcon> */}
+        {/* <ArrowRightIcon></ArrowRightIcon> */}
+        {/* <SkipBackIcon></SkipBackIcon> */}
+        <SkipForwardIcon></SkipForwardIcon>
+        <span className="sr-only">Toggle Sidebar</span>
+      </Button>
+    )
+  } else {
+    return (
+      <Button
+        data-sidebar="trigger"
+        data-slot="sidebar-trigger"
+        variant="ghost"
+        size="icon-sm"
+        className={cn(className)}
+        onClick={(event) => {
+          onClick?.(event)
+          toggleSidebar()
+          setClick(prevState => !prevState)
+        }}
+        {...props}
+      >
+        {/* <MenuIcon></MenuIcon> */}
+        {/* <ArrowRightIcon></ArrowRightIcon> */}
+        <SkipBackIcon></SkipBackIcon>
+        {/* <SkipForwardIcon></SkipForwardIcon> */}
+        <span className="sr-only">Toggle Sidebar</span>
+      </Button>
+    )  
+  }
+  
 }
 
 function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
