@@ -3,6 +3,7 @@
 
 
 
+import { AppbarClient } from "@/components/AppbarClient";
 import { SidebarItem } from "@/components/SidebarItem";
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "@workspace/ui/components/sidebar";
 import { Home, ArrowLeftRight, Clock, ArrowUpRight, Wallet } from "lucide-react";
@@ -42,7 +43,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </SidebarContent>
         </Sidebar>
         <main className="flex-1 p-6">
-          <SidebarTrigger></SidebarTrigger>
+          {/* <SidebarTrigger></SidebarTrigger> */}
+          <AppbarClient></AppbarClient>
           {children}
         </main>
       </div>

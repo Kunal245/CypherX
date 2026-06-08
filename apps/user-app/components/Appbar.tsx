@@ -15,7 +15,7 @@ interface AppbarProps {
 
 export const Appbar = ({ user, onSignin, onSignout }: AppbarProps) => {
   return (
-    <div className="flex justify-between items-center border-b px-4 h-14">
+    <div className="flex justify-between items-center">
       <div>
         
         <span className="text-lg font-semibold">CypherX</span>

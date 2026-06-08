@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <AppbarClient></AppbarClient>
+      {/* <AppbarClient></AppbarClient> */}
       {children}
     </div>
   )
