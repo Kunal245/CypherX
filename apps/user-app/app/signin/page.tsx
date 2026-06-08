@@ -26,6 +26,7 @@ export default function Signin() {
         const check = await signInCheck(number)
 
         if(!check){
+            alert("No user found please SignUp")
             router.push("/signup")
         }
 
