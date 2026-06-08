@@ -255,7 +255,7 @@ function SidebarTrigger({
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar, state } = useSidebar()
+  const { toggleSidebar, state, isMobile, openMobile } = useSidebar()
   const [click, setClick] = React.useState(false)
 
   return (
@@ -276,7 +276,12 @@ function SidebarTrigger({
       {/* <ArrowRightIcon></ArrowRightIcon> */}
       {/* <SkipBackIcon></SkipBackIcon> */}
 
-      {state === "collapsed" ? (
+
+
+      {isMobile ? (
+        openMobile ? ( <SkipBackIcon></SkipBackIcon> )
+         : ( <SkipForwardIcon></SkipForwardIcon> )
+      ) : state === "collapsed" ? (
         <SkipForwardIcon></SkipForwardIcon>
       ) : (
         <SkipBackIcon></SkipBackIcon>
