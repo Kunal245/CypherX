@@ -1,12 +1,14 @@
 "use client"
 
 
+import signInCheck from "@/lib/actions/signInCheck";
+import { db } from "@workspace/db/client";
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
 import { Label } from "@workspace/ui/components/label";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useState } from "react"
 
 
@@ -21,6 +23,13 @@ export default function Signin() {
 
     //*****************THIS IS THE FUNC WHICH PASSES THE VALUES TO NEXT CredentialProvider**********************/
     const handleSignIn = async (e: React.SyntheticEvent) => {
+
+        const check = await signInCheck(number)
+
+        if(!check){
+            router.push("/signup")
+        }
+
         e.preventDefault();
         
         // console.log("NUMBERRRR: " + number);
