@@ -33,19 +33,20 @@ export default function Signup() {
         if(check){
             alert("User exist please SignIn")
             router.push("/signin")
+        } else {
+            e.preventDefault();
+            
+            // console.log("NUMBERRRR: " + number);
+        //   console.log('NUMBER: ', number);
+          const response = await signIn('credentials', {
+            redirect: false,
+            name,
+            number,
+            password,
+          })
+          router.replace('/dashboard');
         }
 
-        e.preventDefault();
-        
-        // console.log("NUMBERRRR: " + number);
-    //   console.log('NUMBER: ', number);
-      const response = await signIn('credentials', {
-        redirect: false,
-        name,
-        number,
-        password,
-      })
-      router.replace('/dashboard');
         // .then(() => {
         //   // console.log(response);
         //   router.replace('/dashboard');
