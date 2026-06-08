@@ -20,6 +20,7 @@ import { useState } from "react"
 export default function Signup() {
 
     const [number, setNumber] = useState("");
+    const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
     // console.log("NUMBERRRR: " + number);
@@ -30,6 +31,7 @@ export default function Signup() {
         const check = await signInCheck(number)
 
         if(check){
+            alert("User exist please SignIn")
             router.push("/signin")
         }
 
@@ -39,6 +41,7 @@ export default function Signup() {
     //   console.log('NUMBER: ', number);
       const response = await signIn('credentials', {
         redirect: false,
+        name,
         number,
         password,
       })
@@ -64,6 +67,12 @@ export default function Signup() {
             </CardHeader>
             <CardContent className="space-y-4" >
                 <div className="space-y-2" >
+                    <Label>Name</Label>
+                    <Input placeholder="Enter Full Name" onChange={(e) => {
+                        setName(e.target.value)
+                    }} ></Input>
+                </div>
+                <div className="space-y-2" >
                     <Label>Number</Label>
                     <Input placeholder="Enter Number" onChange={(e) => {
                         setNumber(e.target.value)
@@ -79,7 +88,7 @@ export default function Signup() {
                 <Button className="w-full" onClick={(e) => {
                     // console.log(number)
                     handleSignIn(e)
-                }}>Sign In</Button>
+                }}>Sign Up</Button>
             </CardContent>
         </Card>
 
