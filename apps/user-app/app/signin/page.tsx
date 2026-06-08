@@ -23,6 +23,14 @@ export default function Signin() {
     //*****************THIS IS THE FUNC WHICH PASSES THE VALUES TO NEXT CredentialProvider**********************/
     const handleSignIn = async (e: React.SyntheticEvent) => {
 
+
+        //***************************ADDED SIGNUP PAGE BY THIS LOGIC*********************************** */
+        // I added a db check action which executes onClick
+        // whenever it says no the user doesn't exist it gives alert and
+        // redirects to the signup page
+        // moved signin logic inside else ***THIS WAS THE IMP FIX WHICH PREVENTS CREATING NEW USER EVEN AFTER CHECK****
+        // vice-versa logic in signup page
+        
         const check = await signInCheck(number)
 
         if(!check){
@@ -40,6 +48,7 @@ export default function Signin() {
           })
           router.replace('/dashboard');
         }
+        //******************************************************************************************* */
 
         // .then(() => {
         //   // console.log(response);
