@@ -19,13 +19,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full">
-        <Sidebar >
+        <Sidebar collapsible="icon" >
           <SidebarHeader className="px-4 py-4 text-lg font-semibold flex-row">
             <div className="py-1">
               <SidebarTrigger></SidebarTrigger>
             </div>
             <div className="py-1.5">
-              CypherX
             </div>
           </SidebarHeader>
           <SidebarContent>
