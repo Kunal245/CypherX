@@ -1,9 +1,13 @@
+
+
+
+
 "use client"
 
 
 import signInCheck from "@/lib/actions/signInCheck";
 import { Button } from "@workspace/ui/components/button";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
 import { Label } from "@workspace/ui/components/label";
 import { signIn } from "next-auth/react";
@@ -13,9 +17,11 @@ import { useState } from "react"
 
 
 
-export default function Signin() {
+export default function Signup() {
 
     const [number, setNumber] = useState("");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
     // console.log("NUMBERRRR: " + number);
@@ -25,9 +31,9 @@ export default function Signin() {
 
         const check = await signInCheck(number)
 
-        if(!check){
-            alert("No user found please SignUp")
-            router.push("/signup")
+        if(check){
+            alert("User exist please SignIn")
+            router.push("/signin")
         } else {
             e.preventDefault();
             
@@ -35,6 +41,8 @@ export default function Signin() {
         //   console.log('NUMBER: ', number);
           const response = await signIn('credentials', {
             redirect: false,
+            name,
+            email,
             number,
             password,
           })
@@ -59,13 +67,20 @@ export default function Signin() {
                   <div>Welcome to CypherX</div>
                   <div className="text-primary px-1">pay</div>
                 </CardTitle>
-                <CardAction>
-                    <Button className="text-primary/100" variant="link" onClick={(e) => {
-                        router.push("/signup")
-                    }} >Sign Up</Button>
-                </CardAction>
             </CardHeader>
             <CardContent className="space-y-4" >
+                <div className="space-y-2" >
+                    <Label>Name</Label>
+                    <Input placeholder="Enter Full Name" onChange={(e) => {
+                        setName(e.target.value)
+                    }} ></Input>
+                </div>
+                <div className="space-y-2" >
+                    <Label>Email</Label>
+                    <Input placeholder="Enter Email" onChange={(e) => {
+                        setEmail(e.target.value)
+                    }} ></Input>
+                </div>
                 <div className="space-y-2" >
                     <Label>Number</Label>
                     <Input placeholder="Enter Number" onChange={(e) => {
@@ -82,7 +97,7 @@ export default function Signin() {
                 <Button className="w-full" onClick={(e) => {
                     // console.log(number)
                     handleSignIn(e)
-                }}>Sign In</Button>
+                }}>Sign Up</Button>
             </CardContent>
         </Card>
 
