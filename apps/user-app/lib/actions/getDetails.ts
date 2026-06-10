@@ -9,7 +9,7 @@ import { db } from "@workspace/db/client";
 
 
 
-export async function getBalance() {
+export async function getDetails() {
   const session = await getServerSession(authOptions);
 
 
@@ -25,14 +25,15 @@ export async function getBalance() {
     // console.log(session);
     // console.log("debugginggg");
 
-  const balance = await db.balance.findFirst({
-    where: { userId: Number(session?.user?.id) },
+  const user = await db.user.findFirst({
+    where: { id: Number(session?.user?.id) },
     //Number(session?.user?.id)- this means if(session) get(user) & if(user) get(id)
     //why "?": this means if session= null it crashes but if used "?" it gives undefined
     //And wwhen done Number(undefined) give "NaN" which prisma rejects and not crash 
   });
   return {
-    amount: balance?.amount || 0,
-    locked: balance?.locked || 0,
+    amount: user?.email || 0,
+    name: user?.name || 0,
+    number: user?.number || 0,
   };
 }
