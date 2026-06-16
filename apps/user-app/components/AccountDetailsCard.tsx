@@ -17,9 +17,10 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="flex flex-row justify-left py-2">
-              <span className="text-3xl font-bold tracking-tight text-primary">Welcome,</span>
+              <span className="text-3xl font-bold tracking-tight text-slate-400">Welcome,</span>
               <span className="px-1 text-3xl tracking-tight">{name}</span>
             </div>
+            
             {/* <div className="flex justify-between py-2">
               <span className="text-3xl font-bold tracking-tight">{hideBalance ? "🙊" : `₹ ${(locked + amount) / 100} INR`}</span>
               <Button variant="outline" size="icon" onClick={() => {setHideBalance(!hideBalance)}} >
@@ -40,6 +41,16 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
                 </span>
               </Link>
             </div> */}
+            <div className="flex flex-col text-sm" >
+              <div className="justify-left py-2">
+                <span className="px-1 text-slate-300 tracking-tight">Email:</span>
+                <span className="px-1 text-slate-200 tracking-tight">{email}</span>
+              </div>
+              <div className="justify-left py-1 text-sm">
+                <span className="px-1 text-slate-300 tracking-tight">Number:</span>
+                <span className="px-1 text-slate-200 tracking-tight">{number}</span>
+              </div>
+            </div>
           </CardFooter>
         </Card>
     )
