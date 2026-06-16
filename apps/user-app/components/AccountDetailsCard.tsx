@@ -12,19 +12,23 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <User2Icon className="h-5 w-5" />
-              Your Balance
+              Account Details
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="flex justify-between py-2">
+            <div className="flex flex-row justify-left py-2">
+              <span className="text-3xl font-bold tracking-tight text-primary">Welcome,</span>
+              <span className="px-1 text-3xl tracking-tight">{name}</span>
+            </div>
+            {/* <div className="flex justify-between py-2">
               <span className="text-3xl font-bold tracking-tight">{hideBalance ? "🙊" : `₹ ${(locked + amount) / 100} INR`}</span>
               <Button variant="outline" size="icon" onClick={() => {setHideBalance(!hideBalance)}} >
                 {hideBalance ? <EyeIcon></EyeIcon> : <EyeClosedIcon></EyeClosedIcon>}
               </Button>
-            </div>
+            </div> */}
           </CardContent>
           <CardFooter>
-            <div className="flex justify-between py-2">
+            {/* <div className="flex justify-between py-2">
               <Link href="/p2pTransaction">
                 <span className="text-3xl font-bold tracking-tight">
                   <Button variant="outline" className="">Send</Button>
@@ -35,7 +39,7 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
                   <Button variant="outline" className="">Add Money</Button>
                 </span>
               </Link>
-            </div>
+            </div> */}
           </CardFooter>
         </Card>
     )
