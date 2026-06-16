@@ -32,7 +32,7 @@ export async function getDetails() {
     //And wwhen done Number(undefined) give "NaN" which prisma rejects and not crash 
   });
   return {
-    amount: user?.email || 0,
+    email: user?.email || 0,
     name: user?.name || 0,
     number: user?.number || 0,
   };
