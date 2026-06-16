@@ -1,5 +1,6 @@
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
+import { User2Icon } from "lucide-react";
 
 
 
@@ -10,7 +11,7 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
         <Card className="w-full max-w-full bg-primary/60 bg-gradient-to-br from-secondary/20 via-primary/20 to-secondary/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Wallet className="h-5 w-5" />
+              <User2Icon className="h-5 w-5" />
               Your Balance
             </CardTitle>
           </CardHeader>
