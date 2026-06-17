@@ -1,6 +1,6 @@
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
-import { User2Icon } from "lucide-react";
+import { MailIcon, PhoneCallIcon, User2Icon } from "lucide-react";
 
 
 
@@ -17,8 +17,8 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="flex flex-row justify-left py-2">
-              <span className="text-3xl font-bold tracking-tight text-slate-400">Welcome,</span>
-              <span className="px-1 text-3xl tracking-tight">{name}</span>
+              <span className="text-3xl font-bold tracking-tight text-slate-400">Welcome</span>
+              <span className="px-2 text-3xl font-bold text-mist tracking-tight">{name}</span>
             </div>
             
             {/* <div className="flex justify-between py-2">
@@ -29,29 +29,46 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
             </div> */}
           </CardContent>
           <CardFooter>
-            {/* <div className="flex justify-between py-2">
-              <Link href="/p2pTransaction">
-                <span className="text-3xl font-bold tracking-tight">
-                  <Button variant="outline" className="">Send</Button>
-                </span>
-              </Link>
-              <Link href="/transfer">
-                <span className="px-2 text-3xl font-bold tracking-tight">
-                  <Button variant="outline" className="">Add Money</Button>
-                </span>
-              </Link>
-            </div> */}
-            <div className="flex flex-col text-sm" >
-              <div className="justify-left py-2">
-                <span className="px-1 text-slate-300 tracking-tight">Email:</span>
-                <span className="px-1 text-slate-200 tracking-tight">{email}</span>
-              </div>
-              <div className="justify-left py-1 text-sm">
-                <span className="px-1 text-slate-300 tracking-tight">Number:</span>
-                <span className="px-1 text-slate-200 tracking-tight">{number}</span>
-              </div>
-            </div>
+            
           </CardFooter>
+
         </Card>
     )
 }
+
+
+
+
+          // <CardFooter className="flex flex-col items-start gap-1 w-full" >
+          //   {/* <div className="flex justify-between py-2">
+          //     <Link href="/p2pTransaction">
+          //       <span className="text-3xl font-bold tracking-tight">
+          //         <Button variant="outline" className="">Send</Button>
+          //       </span>
+          //     </Link>
+          //     <Link href="/transfer">
+          //       <span className="px-2 text-3xl font-bold tracking-tight">
+          //         <Button variant="outline" className="">Add Money</Button>
+          //       </span>
+          //     </Link>
+          //   </div> */}
+          //     <div className="flex items-center gap-1 py-2 text-sm">
+          //       <MailIcon className="w-4 h-4 text-slate-300" />
+          //       <span className="text-slate-300">EMAIL</span>
+          //     </div>
+          //     <div>
+          //       <span className="text-slate-200">{email}</span>
+          //     </div>
+          //     <div className="flex items-center gap-1 py-2 text-sm">
+          //       <PhoneCallIcon className="w-4 h-4 text-slate-300" />
+          //       <span className="text-slate-300">NUMBER</span>
+          //     </div>
+          //     <div>
+          //       <span className="text-slate-200">{number}</span>
+          //     </div>
+          //     {/* <div className="justify-left py-1 text-sm">
+          //       <span className="px-1 text-slate-300 tracking-tight">Number:</span>
+          //       <span className="px-1 text-slate-200 tracking-tight">{number}</span>
+          //     </div> */}
+          //   {/* </div> */}
+          // </CardFooter>
