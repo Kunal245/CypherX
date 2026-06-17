@@ -28,8 +28,14 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
               </Button>
             </div> */}
           </CardContent>
-          <CardFooter>
-            
+          <CardFooter className="py-8" >
+            <div className="flex flex-col" >
+              <div className="flex flex-row" >
+                <div className="py-1 text-slate-400" ><MailIcon></MailIcon></div>
+                <div className="text-slate-400 text-lg px-1.5 py-0.5" >EMAIL</div>
+              </div>
+              <div className="" >{email}</div>
+            </div>
           </CardFooter>
 
         </Card>
