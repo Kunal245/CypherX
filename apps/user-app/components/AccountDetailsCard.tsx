@@ -1,3 +1,4 @@
+import { Badge } from "@workspace/ui/components/badge";
 import { Button } from "@workspace/ui/components/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { MailIcon, PhoneCallIcon, User2Icon } from "lucide-react";
@@ -28,13 +29,27 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
               </Button>
             </div> */}
           </CardContent>
-          <CardFooter className="py-8" >
-            <div className="flex flex-col" >
-              <div className="flex flex-row" >
-                <div className="py-1 text-slate-400" ><MailIcon></MailIcon></div>
-                <div className="text-slate-400 text-lg px-1.5 py-0.5" >EMAIL</div>
+          <CardFooter>
+            <div>
+              <div className="flex flex-col" >
+                <div className="flex flex-row" >
+                  <div className="py-1 text-slate-400" ><MailIcon className="w-4 h-4" ></MailIcon></div>
+                  <div className="text-slate-400 text-sm px-1.5 py-0.5" >EMAIL</div>
               </div>
-              <div className="" >{email}</div>
+
+              <div className="py-1" ><Badge variant="secondary" >{email}</Badge></div>
+            </div>
+
+              <div className="py-3" >
+                <div className="flex flex-row" >
+                  <div className="py-1 text-slate-400" ><MailIcon className="w-4 h-4" ></MailIcon></div>
+                  <div className="text-slate-400 text-sm px-1.5 py-0.5" >NUMBER</div>
+                </div>
+
+                <div className="py-1" ><Badge variant="secondary" >{number}</Badge></div>
+              </div>
+              
+              
             </div>
           </CardFooter>
 
