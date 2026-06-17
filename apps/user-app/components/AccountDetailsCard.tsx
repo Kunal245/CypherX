@@ -21,13 +21,6 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
               <span className="text-3xl font-bold tracking-tight text-slate-400">Welcome</span>
               <span className="px-2 text-3xl font-bold text-mist tracking-tight">{name}</span>
             </div>
-            
-            {/* <div className="flex justify-between py-2">
-              <span className="text-3xl font-bold tracking-tight">{hideBalance ? "🙊" : `₹ ${(locked + amount) / 100} INR`}</span>
-              <Button variant="outline" size="icon" onClick={() => {setHideBalance(!hideBalance)}} >
-                {hideBalance ? <EyeIcon></EyeIcon> : <EyeClosedIcon></EyeClosedIcon>}
-              </Button>
-            </div> */}
           </CardContent>
           <CardFooter>
             <div>
@@ -36,7 +29,6 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
                   <div className="py-1 text-slate-400" ><MailIcon className="w-4 h-4" ></MailIcon></div>
                   <div className="text-slate-400 text-sm px-1.5 py-0.5" >EMAIL</div>
               </div>
-
               <div className="py-1" ><Badge variant="secondary" >{email}</Badge></div>
             </div>
 
@@ -45,14 +37,10 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
                   <div className="py-1 text-slate-400" ><MailIcon className="w-4 h-4" ></MailIcon></div>
                   <div className="text-slate-400 text-sm px-1.5 py-0.5" >NUMBER</div>
                 </div>
-
                 <div className="py-1" ><Badge variant="secondary" >{number}</Badge></div>
               </div>
-              
-              
             </div>
           </CardFooter>
-
         </Card>
     )
 }
