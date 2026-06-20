@@ -47,6 +47,7 @@ export const AccountDetailsCard = ({email, name, number}: {email: string; name: 
 
 
 //************************************************************************************************************************************ */
+//ci-cd test
 
           // <CardFooter className="flex flex-col items-start gap-1 w-full" >
           //   {/* <div className="flex justify-between py-2">
