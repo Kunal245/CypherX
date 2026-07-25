@@ -2,8 +2,9 @@
 
 
 import signInCheck from "@/lib/actions/signInCheck";
+import { Badge } from "@workspace/ui/components/badge";
 import { Button } from "@workspace/ui/components/button";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@workspace/ui/components/card";
+import { Card, CardAction, CardContent, CardFooter, CardHeader, CardTitle } from "@workspace/ui/components/card";
 import { Input } from "@workspace/ui/components/input";
 import { Label } from "@workspace/ui/components/label";
 import { signIn } from "next-auth/react";
@@ -60,7 +61,7 @@ export default function Signin() {
     };
     //**********************************************************************************************************/
 
-    return <div className="flex justify-center items-center min-h-screen">
+    return <div className="flex justify-center items-center min-h-screen flex-col">
 
         <Card className="w-full max-w-sm">
             <CardHeader>
@@ -93,6 +94,13 @@ export default function Signin() {
                     handleSignIn(e)
                 }}>Sign In</Button>
             </CardContent>
+            <CardFooter className="flex-col gap-1 border-t" >
+                {/* <span className="text-xs px-3 font-medium text-muted-foreground" >Demo Credentials</span> */}
+                <div className="flex flex-wrap gap-2" >
+                    <Badge variant={"outline"} className="text-neutral-400" >Demo Number: 7777777777</Badge>
+                    <Badge variant={"outline"} className="text-neutral-400" >Password: 123456</Badge>
+                </div>
+            </CardFooter>
         </Card>
 
     </div>
