@@ -13,7 +13,7 @@ CypherX is a production-oriented monorepo that bundles frontend applications, sh
 
 | Layer | Technologies / Notes |
 |---|---|
-| Frontend | Next.js (app directory), React, TypeScript |
+| Frontend | Next.js, React, TypeScript |
 | UI | shadcn/ui, Tailwind CSS, PostCSS |
 | Backend / API | Next.js API routes / Node.js |
 | Database | Prisma ORM, PostgreSQL |
@@ -21,7 +21,7 @@ CypherX is a production-oriented monorepo that bundles frontend applications, sh
 | Dev & CI | ESLint, TypeScript, Prettier, GitHub Actions (CI) |
 
 
-## Repository Layout (high-level)
+## Repository Layout
 
 - `apps/`
    - `user-app/` — Next.js app for end users (auth, onboarding, dashboard)
@@ -34,7 +34,7 @@ CypherX is a production-oriented monorepo that bundles frontend applications, sh
 - `docker/` — Dockerfile(s) and helpers (see Dockerfile.userApp)
 - `eslint-config/`, `typescript-config/` — centralized linting and TS settings
 
-### Project Tree (detailed)
+### Project Tree
 
 Below is a concise project tree to help new contributors find important code quickly:
 
@@ -76,26 +76,6 @@ Below is a concise project tree to help new contributors find important code qui
 ```
 
 Add or update this tree if the repo structure changes.
-
-## Screenshots
-
-Screenshots for the main user flows are included in `packages/docs/`.
-
-- `packages/docs/dashboard.png` — Home / Dashboard (balance, recent transactions)
-- `packages/docs/quick_transfer.png` — Transfer / Add Money page
-- `packages/docs/p2p_transfer.png` — P2P Transaction page
-- `packages/docs/account_details.png` — Account Details page (profile)
-- `packages/docs/signin.png` — Sign-in page
-- `packages/docs/signup.png` — Sign-up page
-
-Example markdown to include screenshots in the README (paths are repository-root relative):
-
-```markdown
-![Dashboard](packages/docs/dashboard.png)
-![Transfer](packages/docs/quick_transfer.png)
-```
-
-These images are available at `packages/docs/`.
 
 ### Dashboard
 
@@ -228,7 +208,7 @@ For parallel development you can open multiple terminals or adapt a root script 
 
 If you hit an issue not covered here, please open an issue with logs and exact commands used.
 
-## Scripts (common)
+## Scripts
 
 - Run app dev (package-level): `npm run dev`
 - Build app: `npm run build`
